@@ -89,7 +89,7 @@ terminal üzerinden testlerimizi koşmak için .json dosyamıza aşağıdaki gib
     "cypress:open": "cypress open"
   },
 
-
+```
 
 
 ```bash
