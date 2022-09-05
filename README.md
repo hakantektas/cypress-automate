@@ -96,8 +96,4 @@ terminal üzerinden testlerimizi koşmak için .json dosyamıza aşağıdaki gib
     npm run cy:run:chrome
 ```
 
-## Ekler
-
-Herhangi bir ek bilgi buraya gelir
-
   
