@@ -81,7 +81,7 @@ describe('My First Test', () => {
 
 
 terminal üzerinden testlerimizi koşmak için .json dosyamıza aşağıdaki gibi koşmak istediğimiz browser'ı da parametre olarak belirtebiliriz
-
+```javascript
 
 "scripts": {
     "cy:run:chrome": "cypress run --browser chrome",
