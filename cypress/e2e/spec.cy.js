@@ -5,7 +5,7 @@ describe('empty spec', () => {
     cy.visit('https://www.lmax.com/global/demo-login')
     cy.get('#username').type("test")
     cy.get('#password').type('1234')
-    cy.get("(//*[contains(text(),'Login')])[6]").click()
+    cy.xpath("(//*[contains(text(),'Login')])[6]").click()
     
   })
 })
