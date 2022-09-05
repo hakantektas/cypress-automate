@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+   
+    "cypress": "^10.7.0"
+  },
+  "name": "hakantektas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
