@@ -1,9 +1,11 @@
+
+
 describe('empty spec', () => {
-  it('Login with CMS', () => {
-    cy.visit('https://testapi.macfit.com.tr/')
-    cy.get('#loginUsernameInput').type('hq.user')
-    cy.get('#loginPasswordInput').type('HqM@rs21!')
-    cy.get('#loginSubmitButton').click()
+  it('Login with demo site', () => {
+    cy.visit('https://www.lmax.com/global/demo-login')
+    cy.get('#username').type("test")
+    cy.get('#password').type('1234')
+    cy.get("(//*[contains(text(),'Login')])[6]").click()
     
   })
 })

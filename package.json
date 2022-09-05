@@ -1,13 +1,15 @@
 {
   "dependencies": {
-   
     "cypress": "^10.7.0"
   },
   "name": "hakantektas",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo"
+    "start":"cy:run:chrom & cy:run:firefox",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cypress:open": "cypress open"
   },
   "keywords": [],
   "author": "",
