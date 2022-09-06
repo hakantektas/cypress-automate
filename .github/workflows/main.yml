@@ -32,17 +32,3 @@ jobs:
         env:
           # for recording test results and videos to Cypress Dashboard
           CYPRESS_RECORD_KEY: d796c79f-ddee-4af4-af5b-08974fbd8a3c
-workflows:
-  version: 2.1
-  build_and_test:
-    jobs:
-      - build
-      - test1:
-          requires:
-            - build
-      - test2:
-          requires:
-            - build
-      - test3:
-          requires:
-            - build
