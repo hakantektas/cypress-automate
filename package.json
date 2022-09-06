@@ -7,7 +7,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run cy:run:firefox",
+    "start": "npm run cy:run:chrome & npm run cy:run:firefox",
+    "cy:run:chrome": "cypress run --browser chrome --headed",
     "cy:run:firefox": "cypress run --browser firefox --headed",
     "cypress:open": "cypress open"
   },
