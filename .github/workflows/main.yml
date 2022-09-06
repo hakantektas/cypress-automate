@@ -6,19 +6,18 @@ jobs:
   install:
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
-    defaults:
-      run:
-        working-directory: ./build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Save build folder
         uses: actions/upload-artifact@v2
+        run : mkdir /Users/hakantektas/artifact
+        run : echo hello /Users/hakantektas/artifact/world.txt
         with:
           name: build
           if-no-files-found: error
-          path: ./build
+          path: /Users/hakantektas/artifact/
 
       - name: Cypress install
         uses: cypress-io/github-action@v4
