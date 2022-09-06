@@ -6,6 +6,9 @@ jobs:
   install:
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
+    defaults:
+      run:
+        working-directory: ./build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -15,7 +18,7 @@ jobs:
         with:
           name: build
           if-no-files-found: error
-          path: ./build/*
+          path: ./build
 
       - name: Cypress install
         uses: cypress-io/github-action@v4
