@@ -15,7 +15,6 @@ jobs:
         with:
           browser: chrome
           record: true
-          group: Tests on Chrome
         env:
           # for recording test results and videos to Cypress Dashboard
           CYPRESS_RECORD_KEY: d796c79f-ddee-4af4-af5b-08974fbd8a3c
