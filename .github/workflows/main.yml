@@ -1,28 +1,28 @@
-name: Cypress Tests with installation job
+name: Cypress Tests
 
 on: [push]
 
 jobs:
-  install:
+  cypress-run:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Cypress install
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: npm run cy:run:firefox
         uses: cypress-io/github-action@v4
         with:
-          # Disable running of tests within install job
-          runTests: false
-          build: yarn build
-
-      - name: Save build folder
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          if-no-files-found: error
-          path: build
-       # env:
+          # we have already installed all dependencies above
+          install: false
+          start: yarn start:ci
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          browser: chrome
+          record: true
+          parallel: true
+          group: 'UI - Chrome'
+          spec: cypress/tests/ui/*
+        env:
           # for recording test results and videos to Cypress Dashboard
-          # CYPRESS_RECORD_KEY: d796c79f-ddee-4af4-af5b-08974fbd8a3c
+          CYPRESS_RECORD_KEY: d796c79f-ddee-4af4-af5b-08974fbd8a3c
