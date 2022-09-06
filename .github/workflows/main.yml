@@ -11,9 +11,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Save build folder
-        uses: actions/upload-artifact@v2
-        run : mkdir /Users/hakantektas/artifact
-        run : echo hello /Users/hakantektas/artifact/world.txt
+      -  uses: actions/upload-artifact@v2
+      -  run : mkdir /Users/hakantektas/artifact
+      -  run : echo hello /Users/hakantektas/artifact/world.txt
         with:
           name: build
           if-no-files-found: error
