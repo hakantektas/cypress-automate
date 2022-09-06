@@ -27,7 +27,7 @@ jobs:
           paths:
             - .cache
             - tmp
-  test:
+  test1:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -39,8 +39,44 @@ jobs:
       - run: ls -la cypress
       - run: ls -la cypress/e2e
       - run:
-          
-          command: npm start  
+          name: Runnign cypress tests 1
+          command: $(npm bin)/cypress run --spec cypress/e2e/spec.cy.js
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+  test2:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: ls -la cypress
+      - run: ls -la cypress/e2e
+      - run:
+          name: Runnign cypress tests 1
+          command: $(npm bin)/cypress run --spec cypress/e2e/spec2.cy.js
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+  test3:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: ls -la cypress
+      - run: ls -la cypress/e2e
+      - run:
+          name: Runnign cypress tests 1
+          command: $(npm bin)/cypress run --spec cypress/e2e/spec3.cy.js
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -51,6 +87,12 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test:
+      - test1:
+          requires:
+            - build
+      - test2:
+          requires:
+            - build
+      - test3:
           requires:
             - build
