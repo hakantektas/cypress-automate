@@ -40,7 +40,7 @@ jobs:
       - run: ls -la cypress/e2e
       - run:
           
-          command: npm test  
+          command: npm start  
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
