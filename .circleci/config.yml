@@ -39,8 +39,8 @@ jobs:
       - run: ls -la cypress
       - run: ls -la cypress/e2e
       - run:
-          name: Running cypress tests
-          command: $(npm bin)/cypress run
+          
+          command: npm test  
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
