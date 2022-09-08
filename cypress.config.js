@@ -4,8 +4,6 @@ module.exports = defineConfig({
   projectId: 'ebj6h1',
   e2e: {
     chromeWebSecurity: true,
-    defaultCommandTimeout: 60000,
-    pageLoadTimeout:90000,
     setupNodeEvents(on, config) {
       // implement node event listeners here
       
