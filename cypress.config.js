@@ -17,7 +17,7 @@ module.exports = defineConfig({
       
     },
     env: {
-      baseUrl: 'http://localhost:3030',
+      baseUrl: 'https://www.tatilbudur.com',
       FOO: 'bar'
     }
   },
