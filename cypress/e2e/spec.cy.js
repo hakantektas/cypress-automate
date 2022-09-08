@@ -1,8 +1,7 @@
 
-
 describe('empty spec', () => {
   it('Login with demo site', () => {
-    cy.visit('https://www.tatilbudur.com')
+    cy.visit("https://www.tatilbudur.com",{ headers: { "Accept-Encoding": "gzip, deflate" } })
     cy.get('#key').type("Antalya")
     cy.get('#password').type('1234')
     cy.xpath("#hotelSearchCheckIn").click()
