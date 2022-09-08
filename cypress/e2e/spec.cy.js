@@ -1,7 +1,7 @@
 
 describe('empty spec', () => {
   it('Login with demo site', () => {
-    cy.visit("https://www.tatilbudur.com",{ responseTimeout: 35000 })
+    cy.visit("https://www.trendyol.com",{ responseTimeout: 35000 })
     cy.get('#key').type("Antalya")
     cy.get('#password').type('1234')
     cy.xpath("#hotelSearchCheckIn").click()
